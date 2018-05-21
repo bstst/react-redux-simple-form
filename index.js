@@ -8,7 +8,7 @@ import {
   destroy,
 } from './actions';
 
-export const wrapper = (Comp) => {
+export const wrapWithForm = (Comp) => {
   class Wrapper extends Component {
     componentWillMount () {
       this.props.dispatch(init(this.props));
