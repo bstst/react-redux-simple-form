@@ -7,7 +7,7 @@ import {
   VALIDATE_FAIL,
   VALIDATE_SUCCESS,
   DESTROY,
-} from './actions';
+} from '../constants';
 
 const isApplicable = (action) => {
   return action && action.type && (String(action.type)).substring(0, prefix.length) === prefix;
@@ -24,7 +24,7 @@ const initialFieldState = {
   validate: [],
 };
 
-export default (state = {}, action) => {
+const formReducer = (state = {}, action) => {
   if (isApplicable(action)) {
     const { type, payload: { form, name, value, validate, error, touched } } = action;
     const formState = state[form] || {...initialFormState};
@@ -48,3 +48,5 @@ export default (state = {}, action) => {
   }
   return state;
 };
+
+export { formReducer };

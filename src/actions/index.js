@@ -1,22 +1,20 @@
-import { getFormFields, isFormValid, serialize } from './selectors';
+import {
+  getFormFields,
+  isFormValid,
+  serialize,
+} from '../selectors';
 
-export const prefix = '@@react-redux-simple-form';
+import {
+  INIT,
+  TOUCH,
+  CHANGE,
+  DESTROY,
+  VALIDATE_PENDING,
+  VALIDATE_SUCCESS,
+  VALIDATE_FAIL,
+} from '../constants';
 
-const name = (key) => `${prefix}/${key}`;
-
-export const INIT = name('INIT');
-export const FOCUS = name('FOCUS');
-export const BLUR = name('BLUR');
-export const TOUCH = name('TOUCH');
-export const UNTOUCH = name('UNTOUCH');
-export const CHANGE = name('CHANGE');
-export const DESTROY = name('DESTROY');
-export const VALIDATE_PENDING = name('VALIDATE_PENDING');
-export const VALIDATE_SUCCESS = name('VALIDATE_SUCCESS');
-export const VALIDATE_FAIL = name('VALIDATE_FAIL');
-export const SUBMIT = name('SUBMIT');
-
-export const validateField = (form, name, touched = true) => {
+const validateField = (form, name, touched = true) => {
   return (dispatch, getState) => {
     const field = getState().form[form][name];
     dispatch({
@@ -46,7 +44,7 @@ export const validateField = (form, name, touched = true) => {
   };
 };
 
-export const init = (props = {}) => {
+const init = (props = {}) => {
   return (dispatch) => {
     const { form, name, validate, value } = props;
     return dispatch({
@@ -56,7 +54,7 @@ export const init = (props = {}) => {
   };
 };
 
-export const change = (form, name, value, touched) => {
+const change = (form, name, value, touched) => {
   return (dispatch) => {
     dispatch({
       type: CHANGE,
@@ -66,7 +64,7 @@ export const change = (form, name, value, touched) => {
   };
 };
 
-export const touch = (form, name) => {
+const touch = (form, name) => {
   return (dispatch) => {
     dispatch({
       type: TOUCH,
@@ -76,7 +74,7 @@ export const touch = (form, name) => {
   };
 };
 
-export const destroy = (form, name) => {
+const destroy = (form, name) => {
   return (dispatch) => {
     return dispatch({
       type: DESTROY,
@@ -85,7 +83,7 @@ export const destroy = (form, name) => {
   };
 };
 
-export const validate = (form, touched = true) => {
+const validate = (form, touched = true) => {
   return (dispatch, getState) => {
     return new Promise((resolve, reject) => {
       Promise.all(getFormFields(getState(), form).map(field => {
@@ -100,4 +98,13 @@ export const validate = (form, touched = true) => {
       }).catch(() => reject(false));
     });
   };
+};
+
+export {
+  init,
+  change,
+  touch,
+  destroy,
+  validate,
+  validateField,
 };

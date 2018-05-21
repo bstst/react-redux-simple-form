@@ -1,38 +1,28 @@
-import { Component, createElement } from 'react';
-import { connect } from 'react-redux';
+export {
+  wrapWithForm,
+} from './src/wrapper';
 
-import {
+export {
   init,
   change,
   touch,
   destroy,
-} from './actions';
+  validate,
+  validateField,
+} from './src/actions';
 
-export const wrapWithForm = (Comp) => {
-  class Wrapper extends Component {
-    componentWillMount () {
-      this.props.dispatch(init(this.props));
-    }
+export {
+  formReducer,
+} from './src/reducers';
 
-    componentWillUnmount () {
-      this.props.dispatch(destroy(this.props.form, this.props.name));
-    }
+export {
+  getForm,
+  getFormFields,
+  isFormPending,
+  isFormValid,
+  serialize,
+} from './src/selectors';
 
-    render () {
-      const field = {
-        ...this.props.field,
-        touch: () => this.props.dispatch(touch(this.props.form, this.props.name)),
-        change: (value, touched = false) => this.props.dispatch(change(this.props.form, this.props.name, value, touched)),
-      };
-      return createElement(Comp, { ...this.props, field }, this.props.children);
-    }
-  }
-  return connect((state, props) => {
-    const forms = state.form || {};
-    const form = forms[props.form] || {};
-    const field = form[props.name] || {};
-    return {
-      field,
-    };
-  })(Wrapper);
-};
+export {
+  required,
+} from './src/validators';

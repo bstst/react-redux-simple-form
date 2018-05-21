@@ -1,10 +1,10 @@
 {
   "name": "react-redux-simple-form",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React Redux Simple Form",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -13,12 +13,24 @@
   "keywords": [
     "react",
     "redux",
-    "form"
+    "form",
+    "thunk"
   ],
   "author": "Martin Saulis",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bstst/react-redux-simple-form/issues"
   },
-  "homepage": "https://github.com/bstst/react-redux-simple-form#readme"
+  "homepage": "https://github.com/bstst/react-redux-simple-form#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-env": "^2.4.1",
+    "babel-jest": "^22.4.4",
+    "jest": "^22.4.4",
+    "react": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0",
+    "regenerator-runtime": "^0.11.1"
+  }
 }
