@@ -1,0 +1,24 @@
+{
+  "name": "react-redux-simple-form",
+  "version": "0.0.1",
+  "description": "React Redux Simple Form",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bstst/react-redux-simple-form.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "form"
+  ],
+  "author": "Martin Saulis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bstst/react-redux-simple-form/issues"
+  },
+  "homepage": "https://github.com/bstst/react-redux-simple-form#readme"
+}
