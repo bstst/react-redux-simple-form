@@ -1,2 +1,4 @@
+.idea
+.git
 coverage
 node_modules
