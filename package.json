@@ -1,34 +1,29 @@
 {
   "name": "react-redux-simple-form",
   "version": "0.0.10",
+  "author": "Martin Saulis",
+  "license": "MIT",
   "description": "React Redux Simple Form",
-  "main": "lib/index.js",
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
-  },
-  "scripts": {
-    "test": "jest",
-    "build": "rimraf lib/ && ./node_modules/.bin/babel --presets es2015 src/ --out-dir lib/",
-    "prepublishOnly": "npm run build"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bstst/react-redux-simple-form.git"
   },
+  "bugs": {
+    "url": "https://github.com/bstst/react-redux-simple-form/issues"
+  },
+  "homepage": "https://github.com/bstst/react-redux-simple-form#readme",
   "keywords": [
     "react",
     "redux",
     "form",
     "thunk"
   ],
-  "author": "Martin Saulis",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/bstst/react-redux-simple-form/issues"
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "rimraf lib/ && ./node_modules/.bin/babel --presets es2015 src/ --out-dir lib/",
+    "prepublishOnly": "npm run build"
   },
-  "homepage": "https://github.com/bstst/react-redux-simple-form#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
