@@ -1,10 +1,12 @@
 {
   "name": "react-redux-simple-form",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "React Redux Simple Form",
   "main": "lib/index.js",
   "babel": {
-    "presets": ["es2015"]
+    "presets": [
+      "es2015"
+    ]
   },
   "scripts": {
     "test": "jest",
