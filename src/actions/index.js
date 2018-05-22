@@ -60,7 +60,7 @@ const change = (form, name, value, touched) => {
       type: CHANGE,
       payload: { form, name, value, touched },
     });
-    return dispatch(validateField(form, name)).then(() => {}).catch(() => {});
+    return dispatch(validateField(form, name, touched)).then(() => {}).catch(() => {});
   };
 };
 
