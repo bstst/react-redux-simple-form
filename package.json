@@ -1,6 +1,6 @@
 {
   "name": "react-redux-simple-form",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "React Redux Simple Form",
   "main": "lib/index.js",
   "babel": {
