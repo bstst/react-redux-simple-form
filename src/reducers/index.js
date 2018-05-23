@@ -24,7 +24,7 @@ const initialFieldState = {
   validate: [],
 };
 
-const formReducer = (state = {}, action) => {
+const form = (state = {}, action) => {
   if (isApplicable(action)) {
     const { type, payload: { form, name, value, validate, error, touched } } = action;
     const formState = state[form] || {...initialFormState};
@@ -49,4 +49,4 @@ const formReducer = (state = {}, action) => {
   return state;
 };
 
-export { formReducer };
+export { form };
