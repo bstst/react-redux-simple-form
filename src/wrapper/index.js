@@ -6,7 +6,7 @@ import {
   change,
   touch,
   destroy,
-} from '../actions/index';
+} from '../actions';
 
 const wrapWithForm = (Comp) => {
   class Wrapper extends Component {

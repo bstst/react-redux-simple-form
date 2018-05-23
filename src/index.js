@@ -1,3 +1,5 @@
-export {
+import {
   wrapWithForm,
-} from './wrapper/index';
+} from './wrapper';
+
+export { wrapWithForm };

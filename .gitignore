@@ -2,4 +2,4 @@
 .git
 coverage
 node_modules
-lib
+/*.js
