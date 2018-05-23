@@ -1,5 +1,3 @@
-import {
-  wrapWithForm,
-} from './wrapper';
+import hoc from './hoc';
 
-export { wrapWithForm };
+export { hoc as connectForm };
