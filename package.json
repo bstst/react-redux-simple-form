@@ -21,7 +21,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "clean": "git clean -fdx -e node_modules -e .idea .",
+    "clean": "git clean -fdx -e node_modules -e .idea -e src .",
     "build": "npm run clean && babel src -d .",
     "prepublishOnly": "npm run build"
   },
