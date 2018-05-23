@@ -1,3 +1,7 @@
-   src
-   .idea
-   coverage
+   /src
+   /.idea
+   /coverage
+   /.babelrc
+   /.eslintrc.js
+   /yarn.lock
+   /**/*.test.js

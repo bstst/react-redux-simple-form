@@ -1,5 +1,7 @@
-.idea
-.git
-coverage
-node_modules
+/.idea
+/.git
+/coverage
+/node_modules
 /*.js
+/*
+!/src/*
