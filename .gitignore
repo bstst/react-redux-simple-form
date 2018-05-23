@@ -4,4 +4,4 @@
 /node_modules
 /*.js
 /*
-!/src/*
+!/src
