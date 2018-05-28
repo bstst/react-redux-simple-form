@@ -10,7 +10,7 @@ import {
 
 const hoc = (Comp) => {
   class Wrapper extends Component {
-    componentWillMount () {
+    componentDidMount () {
       this.props.init();
     }
 
