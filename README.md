@@ -1,1 +1,1 @@
-# react-redux-simple-form
+# [![Build Status](https://travis-ci.org/bstst/react-redux-simple-form.svg?branch=master)](https://travis-ci.org/bstst/react-redux-simple-form) react-redux-simple-form 
