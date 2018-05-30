@@ -19,7 +19,6 @@ const initialFieldState = {
   form: null,
   value: null,
   touched: false,
-  valid: true,
   error: '',
   validate: [],
 };
