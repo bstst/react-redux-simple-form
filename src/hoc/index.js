@@ -37,7 +37,12 @@ const hoc = (Comp) => {
       init: () => dispatch(init(props)),
       destroy: () => dispatch(destroy(props.form, props.name)),
       touch: () => dispatch(touch(props.form, props.name)),
-      change: (value, touched = false) => dispatch(change(props.form, props.name, value, touched)),
+      change: (value, touched = false) => {
+        dispatch(change(props.form, props.name, value, touched));
+        if (typeof props.onChange === 'function') {
+          props.onChange(value);
+        }
+      },
     };
   };
 
