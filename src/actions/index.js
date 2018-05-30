@@ -27,10 +27,7 @@ const validateField = (form, name, touched = true) => {
       })).then(data => {
         const errors = data.filter(error => error !== undefined);
         if (errors.length) {
-          dispatch({
-            type: VALIDATE_FAIL,
-            payload: { form, name, error: errors[0], touched },
-          });
+          dispatch(fail(form, name, errors[0], touched));
           reject(errors[0]);
         } else {
           dispatch({
@@ -100,6 +97,13 @@ const validate = (form, touched = true) => {
   };
 };
 
+const fail = (form, name, error, touched) => (dispatch) => {
+  return dispatch({
+    type: VALIDATE_FAIL,
+    payload: { form, name, error, touched },
+  });
+};
+
 export {
   init,
   change,
@@ -107,4 +111,5 @@ export {
   destroy,
   validate,
   validateField,
+  fail,
 };
