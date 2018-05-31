@@ -14,6 +14,7 @@
   "homepage": "https://github.com/bstst/react-redux-simple-form#readme",
   "keywords": [
     "react",
+    "react-native",
     "redux",
     "form",
     "thunk"
