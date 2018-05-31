@@ -14,39 +14,44 @@ Any component that has **form** and **name** properties and wrapped with the pro
 
 Create your store:
 
-    import { createStore, combineReducers, applyMiddleware } from 'redux';
-    import thunk from 'redux-thunk';
-    import { form } from 'react-redux-simple-form/reducers';
-    
-    const store = createStore(combineReducers({ form }), applyMiddleware(thunk));
+```javascript
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { form } from 'react-redux-simple-form/reducers';
+
+const store = createStore(combineReducers({ form }), applyMiddleware(thunk));
+```
 
 Create a basic input:
 
-    import React, { Component } from 'react';
-    import { connectForm } from 'react-redux-simple-form';
-    
-    class Input extends Component {
-      render () {
-        return (
-          <div>
-            <input
-              onChange={(e) => this.props.change(e.target.value)}
-              onBlur={() => this.props.touch()}
-            />
-            {this.props.field.error !== '' && <div>{this.props.field.error}</div>}
-          </div>
-        );
-      }
-    }
-    
-    const ConnectedInput = connectForm(Input);
-    
-    export default ConnectedInput;
+```javascript
+import React, { Component } from 'react';
+import { connectForm } from 'react-redux-simple-form';
+
+class Input extends Component {
+  render () {
+    return (
+      <div>
+        <input
+          onChange={(e) => this.props.change(e.target.value)}
+          onBlur={() => this.props.touch()}
+        />
+        {this.props.field.error !== '' && <div>{this.props.field.error}</div>}
+      </div>
+    );
+  }
+}
+
+const ConnectedInput = connectForm(Input);
+
+export default ConnectedInput;
+```
     
 And use it:
 
-    <ConnectedInput
-      form="myform"
-      name="myinput"
-    />
-
+```javascript
+<ConnectedInput
+  form="myform"
+  name="myinput"
+/>
+```
