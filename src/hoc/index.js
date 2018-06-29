@@ -34,7 +34,7 @@ const hoc = (Comp) => {
 
   const mapDispatchToProps = (dispatch, props) => {
     return {
-      init: () => dispatch(init(props)),
+      init: () => dispatch(init(props.form, props.name, props.value, props.validators)),
       destroy: () => dispatch(destroy(props.form, props.name)),
       touch: () => dispatch(touch(props.form, props.name)),
       change: (value, touched = false) => {

@@ -22,7 +22,7 @@ const validateField = (form, name, touched = true) => {
       payload: { form, name },
     });
     return new Promise((resolve, reject) => {
-      Promise.all((field.validate || []).map(validator => {
+      Promise.all((field.validators || []).map(validator => {
         return Promise.resolve(validator(field.value));
       })).then(data => {
         const errors = data.filter(error => error !== undefined);
@@ -41,12 +41,11 @@ const validateField = (form, name, touched = true) => {
   };
 };
 
-const init = (props = {}) => {
+const init = (form, name, value, validators) => {
   return (dispatch) => {
-    const { form, name, validate, value } = props;
     return dispatch({
       type: INIT,
-      payload: { form, name, validate, value },
+      payload: { form, name, value, validators },
     });
   };
 };

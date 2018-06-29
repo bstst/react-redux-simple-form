@@ -20,17 +20,17 @@ const initialFieldState = {
   value: null,
   touched: false,
   error: '',
-  validate: [],
+  validators: [],
 };
 
 const form = (state = {}, action) => {
   if (isApplicable(action)) {
-    const { type, payload: { form, name, value, validate, error, touched } } = action;
+    const { type, payload: { form, name, value, validators, error, touched } } = action;
     const formState = state[form] || {...initialFormState};
     const fieldState = formState[name] || {...initialFieldState};
     switch (type) {
       case INIT:
-        return {...state, [form]: {...formState, [name]: {...fieldState, form, name, validate, value}}};
+        return {...state, [form]: {...formState, [name]: {...fieldState, form, name, validators, value}}};
       case CHANGE:
         return {...state, [form]: {...formState, [name]: {...fieldState, value, touched}}};
       case TOUCH:
